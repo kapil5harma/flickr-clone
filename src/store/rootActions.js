@@ -2,13 +2,19 @@ import {
   Types as groupsActionTypes,
   Creators as groupsActionCreators
 } from '../app/groups/store';
+import {
+  Types as photosActionTypes,
+  Creators as photosActionCreators
+} from '../app/gallery/store';
 
 const Types = {
-  ...groupsActionTypes
+  ...groupsActionTypes,
+  ...photosActionTypes
 };
 
 const Creators = {
-  ...groupsActionCreators
+  ...groupsActionCreators,
+  ...photosActionCreators
 };
 
 export { Types, Creators };

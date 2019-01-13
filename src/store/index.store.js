@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './rootReducer';
-import { watchGroups } from './rootSaga';
+import { watchGroups, watchGallery } from './rootSaga';
 
 const composeEnhancers =
   process.env.NODE_ENV === 'development'
@@ -17,5 +17,6 @@ const store = createStore(
 );
 
 sagaMiddleware.run(watchGroups);
+sagaMiddleware.run(watchGallery);
 
 export default store;
