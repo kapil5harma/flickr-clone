@@ -4,21 +4,26 @@ const footerStyle = {
   background: '#343a40',
   color: '#fff',
   width: '100%',
-  height: '100%'
+  height: '90px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center'
 };
 class Footer extends Component {
   render() {
     return (
       <footer className='Footer' style={footerStyle}>
-        Copyright &copy; {new Date().getFullYear()} |{' '}
-        <a
-          href='https://www.kapil5harma.com/#/'
-          target='_blank'
-          rel='noopener noreferrer'
-          style={{ color: '#ccc' }}
-        >
-          Kapil Sharma
-        </a>{' '}
+        <span>
+          Copyright &copy; {new Date().getFullYear()} |{' '}
+          <a
+            href='https://www.kapil5harma.com/#/'
+            target='_blank'
+            rel='noopener noreferrer'
+            style={{ color: '#ccc' }}
+          >
+            Kapil Sharma
+          </a>
+        </span>
         <br /> Powered by React & Redux
       </footer>
     );
