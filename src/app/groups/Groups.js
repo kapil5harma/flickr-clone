@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Creators } from './store/actions';
-import SearchInput, { createFilter } from 'react-search-input';
+import SearchInput from // , { createFilter }
+'react-search-input';
 
 class Groups extends Component {
   state = {
@@ -23,6 +25,15 @@ class Groups extends Component {
     this.setState({ searchText: searchText });
   };
 
+  goToGroup = (url, id) => {
+    // console.log('url: ', url);
+    // console.log('this.props: ', this.props);
+    this.props.history.push({
+      pathname: 'gallery',
+      state: { url: url, id: id }
+    });
+  };
+
   render() {
     const { groups } = this.props;
     return (
@@ -36,7 +47,11 @@ class Groups extends Component {
             <div className='search-results'>
               {groups.map(group => {
                 return (
-                  <div className={`group-${group.id % 2}`} key={group.id}>
+                  <div
+                    className={`group-${group.id % 2}`}
+                    key={group.id}
+                    onClick={() => this.goToGroup(group.url, group.nsid)}
+                  >
                     <div className='name'>{group.name}</div>
                     {/* <div className='subject'>{group.subject}</div> */}
                   </div>
@@ -51,7 +66,7 @@ class Groups extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('state: ', state);
+  // console.log('state: ', state);
   return {
     groups: state.groups.groups
   };
@@ -68,4 +83,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Groups);
+)(withRouter(Groups));
