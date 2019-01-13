@@ -21,6 +21,22 @@ export function* fetchSearchResultsSaga(action) {
         ...res.data.groups.group[key]
       });
     }
+    // groups.map(group => {
+    //   let groupId = group.nsid;
+    //   const urlFor = `${
+    //     apiEndpoints.getGroupURL
+    //   }&api_key=bda33e70c77f4ff7d44d07a41c8e9fca&group_id=${groupId}&format=json&nojsoncallback=1`;
+
+    //   const res2 = axios.get(urlFor).then(data => {
+    //     // console.log('data: ', data);
+    //     groups.forEach(group => {
+    //       if (group.nsid === data.data.group.nsid) {
+    //         // console.log('group: ', group);
+    //         groups[group.id].url = data.data.group.url;
+    //       }
+    //     });
+    //   });
+    // });
     // console.log('groups: ', groups);
     yield put(Creators.fetchSearchResultsSuccess(groups));
   } catch (err) {
