@@ -17,6 +17,13 @@ code {
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
   padding: 1rem;
+  background: #efefef;
+}
+.heading {
+  height: 4.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* CSS for Groups.js */
@@ -60,13 +67,23 @@ code {
 
 /* CSS for Gallery.js */
 .Gallery {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
+  column-count: 2;
+  column-width: 240px;
+  /* break-inside: avoid;
+  break-after: avoid;
+  break-before: avoid; */
 }
 .Card {
+  break-inside: avoid;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  padding: 0.25rem;
+  padding: 0.5rem;
+  background: #fff;
+  margin-bottom: 1rem;
+  box-shadow: 1px 1px 1px 1px rgba(37, 37, 37, 0.15);
 }
 .Card img {
   max-width: 360px;
@@ -75,6 +92,7 @@ code {
   /* position: relative;
   top: -15%;
   left: 2%; */
+  margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
   width: calc(100%);
