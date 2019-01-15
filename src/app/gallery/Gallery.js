@@ -5,7 +5,7 @@ import { Creators } from './store/actions';
 
 const createImageUrl = (farmId, serverId, id, secret) => {
   const url = `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`;
-  // console.log('url: ', url);
+  console.log('url: ', url);
   return url;
 };
 
@@ -22,7 +22,7 @@ class Gallery extends Component {
       <div className='Gallery'>
         {photos &&
           photos.map((photo, index) => {
-            // console.log('photo: ', photo);
+            console.log('photo: ', photo);
             const imgUrl = createImageUrl(
               photo.farm,
               photo.server,

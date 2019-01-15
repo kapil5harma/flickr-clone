@@ -4,10 +4,11 @@ const footerStyle = {
   background: '#343a40',
   color: '#fff',
   width: '100%',
-  height: '90px',
+  height: '6rem',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  textAlign: 'center'
 };
 class Footer extends Component {
   render() {

@@ -1,5 +1,4 @@
 export const rootConfig = {
-  // apiRoot: `https://www.flickr.com/services/api/explore/flickr.groups.`
   apiRoot: `https://api.flickr.com/services/rest/?method=`
 };
 
@@ -8,5 +7,6 @@ export const apiEndpoints = {
   groupsBrowse: `${rootConfig.apiRoot}browse`,
   gallery: `${rootConfig.apiRoot}pools.getPhotos`,
   getGroupURL: `${rootConfig.apiRoot}flickr.urls.getGroup`,
-  getPhotos: `${rootConfig.apiRoot}flickr.groups.pools.getPhotos`
+  getPhotos: `${rootConfig.apiRoot}flickr.groups.pools.getPhotos`,
+  photoOverview: `${rootConfig.apiRoot}flickr.groups.pools.getPhotos`
 };
